@@ -1,54 +1,79 @@
 # Crestlock Retaining
 
-Production-ready Laravel 13 + Filament 3 website, ERP, and AI toolkit for a Denver Front Range retaining wall contractor. Public marketing site, knowledge base, WhatsApp CTA, and a full admin ERP for wall jobs, inventory, invoices, scheduling, and AI assistants.
+Full-stack business platform for a retaining wall contractor company — public website, Filament admin ERP, knowledge base, and AI assistants in one Laravel app.
 
-## ✨ Features
+## Features
 
-- 🧱 Premium public site with hero, services, about, ERP dashboard preview, and contact form
-- 🛠️ Service detail pages for segmental, boulder, concrete, drainage rescue, terraces, and HOA walls
-- 📚 Blog / field notes with seeded retaining wall articles
-- 💬 Floating WhatsApp button + public AI chatbot (OpenAI / Gemini / FAQ demo fallback)
-- 🧾 Filament ERP at `/admin` — customers, jobs, inventory, invoices, payments, appointments
-- 👥 Roles: Admin, Manager, Staff (Spatie Permission + role column)
-- 📊 Reports dashboard with stats and charts
-- ⚙️ Company settings page + AI content / automation / troubleshooting tools
-- 📖 Knowledge base: common issues, guides, admin manual, troubleshooting
-- 🌱 Realistic demo seeders for Colorado homeowners and wall jobs
+### Public website
+- Marketing home with hero, services, about, and contact
+- Dedicated service pages for the retaining wall contractor offer set
+- Blog / journal with seeded posts
+- Knowledge base (common issues, guides, admin notes, troubleshooting)
+- Contact form that saves leads to the database
+- Floating WhatsApp button
+- Public AI chatbot (FAQ-trained; live API when keys are set)
 
-## 🧰 Tech Stack
+### Admin ERP (`/admin`)
+- Customers / clients
+- Jobs / projects / orders
+- Inventory & products
+- Invoices & payments
+- Appointments / scheduling
+- Roles: Admin, Manager, Staff (Spatie Permission)
+- Reports dashboard with stats and charts
+- Company settings
+- AI Studio: content drafts, automation ideas, troubleshooting help
+- Seeded demo data for a complete walkthrough
 
-- Laravel 13
-- Filament 3
-- Livewire + Alpine.js + Tailwind (Filament)
-- MySQL or SQLite (demo)
-- Spatie Laravel Permission
-- OpenAI PHP Laravel SDK with Gemini fallback config
+### AI
+- Public chatbot widget
+- Admin content generator
+- Automation suggestions panel
+- Troubleshooting assistant
+- OpenAI or Gemini via HTTP — FAQ demo mode when keys are empty
 
-## 🚀 Installation
+## Technology
+
+| Layer | Stack |
+|-------|--------|
+| Backend | Laravel 13, PHP 8.3+ |
+| Admin | Filament 3 |
+| UI | Livewire, Alpine.js, Tailwind CSS |
+| Auth / roles | Spatie Laravel Permission |
+| Database | MySQL or SQLite (local demo) |
+| AI | OpenAI / Gemini REST (`App\Services\AiService`) |
+| Tooling | Composer, Vite, Artisan |
+
+## Getting started
 
 ```bash
 git clone https://github.com/imranbru99/retaining-wall-contractor.git
 cd retaining-wall-contractor
 composer install
-copy .env.example .env   # Windows
+cp .env.example .env
 php artisan key:generate
-# SQLite demo is ready — or configure MySQL in .env
+# SQLite demo: create database/database.sqlite if needed
 php artisan migrate --seed
-php artisan storage:link
 php artisan serve
 ```
 
-Admin panel: `http://localhost:8000/admin`  
-Public site: `http://localhost:8000`
+| Surface | URL |
+|---------|-----|
+| Public site | http://localhost:8000 |
+| Admin | http://localhost:8000/admin |
 
-### Demo credentials
+**Demo login:** `admin@example.com` / `password`
 
-- Email: `admin@example.com`
-- Password: `password`
+Optional in `.env`:
 
-Optional AI keys in `.env`: `OPENAI_API_KEY`, `GEMINI_API_KEY`.
+```
+OPENAI_API_KEY=
+OPENAI_MODEL=gpt-4o-mini
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-1.5-flash
+```
 
-## 🖼️ Screenshots / Visual Dashboard
+## Screenshots
 
 ![Modern outdoor home hillside](https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80)
 
@@ -58,15 +83,9 @@ Optional AI keys in `.env`: `OPENAI_API_KEY`, `GEMINI_API_KEY`.
 
 ![Planted terrace beds](https://images.unsplash.com/photo-1466692476866-aef53dfb6c00?auto=format&fit=crop&w=1200&q=80)
 
-## 🌐 Live Demo
+## Live demo
 
-Placeholder — deploy to your preferred host (Forge, Vapor, shared PHP) and update this section with the production URL.
-
-## 🔍 SEO-optimized GitHub description suggestion
-
-```
-Crestlock Retaining — Laravel 13 + Filament 3 retaining wall contractor website & ERP with AI chatbot, jobs, inventory, invoices, and Denver Front Range demo data.
-```
+Deploy to Forge, Vapor, or any PHP 8.3+ host, then replace this section with your public URL.
 
 ---
 
@@ -85,3 +104,4 @@ Delivery Mode: Async-ready, Slack, Discord, Jira, GitHub, and production-first a
 | 📧 Direct Email | me@imrandev.bd | Send Email ↗ |
 | 🐦 X (Twitter) | @imrandev_bd | Follow ↗ |
 | 📺 YouTube Tech | @ImranDevBD | Subscribe ↗ |
+
